@@ -30,7 +30,8 @@ abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
     private function setSeparator($separator)
     {
         if (!is_string($separator)) {
-            throw new \Exception('"' 
+            throw new \Exception(
+                '"' 
                 . $separator 
                 . '" is not a valid separator.'
             );

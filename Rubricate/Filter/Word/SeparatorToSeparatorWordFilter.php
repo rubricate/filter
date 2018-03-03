@@ -18,13 +18,12 @@ class SeparatorToSeparatorWordFilter
     implements  IGetFilter
 {
 
-    protected $_replaceSeparator = NULL;
+    protected $_replaceSeparator = null;
 
     public function __construct(
         $searchSeparator = ' ', 
         $replacementSeparator = '-'
-    ) 
-    {
+    ) { 
         parent::__construct($searchSeparator);
         $this->_replaceSeparator = $replacementSeparator;
     }
@@ -32,11 +31,13 @@ class SeparatorToSeparatorWordFilter
     public function getFilter($value) 
     {
 
-        if (!is_string($this->_replaceSeparator))
-            throw new \Exception('"' 
-            . $this->_replaceSeparator 
-            . '" is not a valid replaceSeparator.'
-        );
+        if (!is_string($this->_replaceSeparator)) {
+            throw new \Exception(
+                '"' 
+                . $this->_replaceSeparator 
+                . '" is not a valid replaceSeparator.'
+            );
+        }
 
         return str_replace(
             parent::getSeparator(), 

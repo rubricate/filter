@@ -21,7 +21,7 @@ class CamelCaseToSeparatorWordFilter
 
     public function __construct($separator = ' ')
     {
-        parent::__construct($separator) ;
+        parent::__construct($separator);
     }
 
     public function getFilter($value) 
