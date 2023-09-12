@@ -1,1 +1,5 @@
 *.vim
+*.lab.*
+tags
+note.txt
+vendor/
