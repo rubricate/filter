@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
@@ -12,14 +14,13 @@ class CamelCaseToSeparatorWordFilter extends
         parent::__construct($separator);
     }
 
-    public function getFilter($value) 
+    public function getFilter($value): string
     {
         $word = array();
         $word = preg_split('/(?<=[a-z])(?=[A-Z])/x', $value);
         $count = count($word);
 
-        for ($i = 0; $i < $count; ++$i) 
-        {
+        for ($i = 0; $i < $count; ++$i){
             $word[$i];
         }
 

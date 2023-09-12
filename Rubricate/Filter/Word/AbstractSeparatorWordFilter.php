@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Filter\Word;
 
 abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
@@ -11,7 +13,7 @@ abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
         self::setSeparator($separator);
     }
 
-    private function setSeparator($separator)
+    private function setSeparator($separator): void
     {
         if (!is_string($separator)) {
             throw new \Exception(
@@ -25,7 +27,7 @@ abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
         return $this;
     }
 
-    public function getSeparator()
+    public function getSeparator(): string
     {
         return $this->separator;
     }

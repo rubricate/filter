@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
@@ -7,7 +9,7 @@ use Rubricate\Filter\IGetFilter;
 class SeparatorToSeparatorWordFilter extends 
     AbstractSeparatorWordFilter implements  IGetFilter
 {
-    protected $_replaceSeparator = null;
+    protected $_replaceSeparator = '';
 
     public function __construct(
         $searchSeparator = ' ', 
@@ -17,7 +19,7 @@ class SeparatorToSeparatorWordFilter extends
         $this->_replaceSeparator = $replacementSeparator;
     }
 
-    public function getFilter($value) 
+    public function getFilter($value): string
     {
         if (!is_string($this->_replaceSeparator)) {
             throw new \Exception('"' 

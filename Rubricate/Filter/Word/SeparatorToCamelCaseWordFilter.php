@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
@@ -12,7 +14,7 @@ class SeparatorToCamelCaseWordFilter extends
         parent::__construct($separator);
     }
 
-    public function getFilter($value) 
+    public function getFilter($value): string
     {
         $word = array();
         $word = explode(parent::getSeparator(), $value);
