@@ -6,31 +6,20 @@ namespace Rubricate\Filter\Word;
 
 abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
 {
-    private $separator = null;
+    private string $separator;
 
-    public function __construct($separator = ' ') 
+    public function __construct(string $separator = ' ')
     {
-        self::setSeparator($separator);
+        $this->setSeparator($separator);
     }
 
-    private function setSeparator($separator): void
+    private function setSeparator(string $separator): void
     {
-        if (!is_string($separator)) {
-            throw new \Exception(
-                '"' 
-                . $separator 
-                . '" is not a valid separator.'
-            );
-        }
-
         $this->separator = $separator;
-        return $this;
     }
 
     public function getSeparator(): string
     {
         return $this->separator;
     }
-
 }
-

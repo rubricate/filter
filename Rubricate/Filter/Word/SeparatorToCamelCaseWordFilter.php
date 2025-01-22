@@ -9,7 +9,7 @@ use Rubricate\Filter\IGetFilter;
 class SeparatorToCamelCaseWordFilter extends 
     AbstractSeparatorWordFilter implements  IGetFilter
 {
-    public function __construct($separator = '-')
+    public function __construct(string $separator = '-')
     {
         parent::__construct($separator);
     }

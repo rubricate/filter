@@ -8,11 +8,11 @@ use Rubricate\Filter\IGetFilter;
 
 class AlnumPreserveFilter implements IGetFilter
 {
-    private $search = '/[^a-zA-Z\]0-9]/' ;
+    private string $search = '/[^a-zA-Z\]0-9]/' ;
 
-    public function getFilter($value): string
+    public function getFilter(string $value): string
     {
-        return (string) preg_replace($this->search, '', $value);
+        return preg_replace($this->search, '', $value) ?? '';
     }
 
 }

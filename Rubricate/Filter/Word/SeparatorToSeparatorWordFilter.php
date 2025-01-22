@@ -5,34 +5,33 @@ declare(strict_types=1);
 namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
+use InvalidArgumentException;
 
 class SeparatorToSeparatorWordFilter extends 
-    AbstractSeparatorWordFilter implements  IGetFilter
+    AbstractSeparatorWordFilter implements IGetFilter
 {
-    protected $_replaceSeparator = '';
-
     public function __construct(
-        $searchSeparator = ' ', 
-        $replacementSeparator = '-'
-    ) { 
+        string $searchSeparator = ' ',
+        private string $replacementSeparator = '-'
+    ) {
         parent::__construct($searchSeparator);
-        $this->_replaceSeparator = $replacementSeparator;
     }
 
-    public function getFilter($value): string
+    public function getFilter(string $value): string
     {
-        if (!is_string($this->_replaceSeparator)) {
-            throw new \Exception('"' 
-                . $this->_replaceSeparator 
-                . '" is not a valid replaceSeparator.'
+        if (!is_string($this->replacementSeparator)) {
+            throw new InvalidArgumentException(
+                sprintf(
+                    '"%s" is not a valid replacementSeparator.',
+                    $this->replacementSeparator
+                )
             );
         }
 
         return str_replace(
-            parent::getSeparator(), 
-            $this->_replaceSeparator, $value
+            parent::getSeparator(),
+            $this->replacementSeparator,
+            $value
         );
-
     }
 }
-
