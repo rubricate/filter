@@ -8,12 +8,11 @@ use Rubricate\Filter\IGetFilter;
 
 class NumPreserveFilter implements IGetFilter
 {
-    private string $search = '/[^0-9]/' ;
+    private const PATTERN = '/[^0-9]/';
 
-    public function getFilter(string $value): int
+    public function getFilter(string $value): string
     {
-        return (int) (preg_replace($this->search, '', $value)?? 0);
+        return preg_replace(self::PATTERN, '', $value) ?? '';
     }
-
 }
 
