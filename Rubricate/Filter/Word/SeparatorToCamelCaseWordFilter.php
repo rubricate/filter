@@ -6,25 +6,19 @@ namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
 
-class SeparatorToCamelCaseWordFilter extends 
-    AbstractSeparatorWordFilter implements  IGetFilter
+class SeparatorToCamelCaseWordFilter extends AbstractSeparatorWordFilter implements IGetFilter
 {
     public function __construct(string $separator = '-')
     {
         parent::__construct($separator);
     }
 
-    public function getFilter($value): string
+    public function getFilter(string $value): string
     {
-        $word = array();
-        $word = explode(parent::getSeparator(), $value);
-        $count = count($word);
+        $words = explode($this->getSeparator(), $value);
+        $capitalizedWords = array_map('ucfirst', $words);
 
-        for ($i = 0; $i < $count; ++$i){
-            $word[$i] = ucfirst($word[$i]);
-        }
-
-        return implode('', $word);
+        return implode('', $capitalizedWords);
     }
 }
 
