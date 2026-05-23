@@ -8,12 +8,11 @@ use Rubricate\Filter\IGetFilter;
 
 class AlphaPreserveFilter implements IGetFilter
 {
-    private string $search = '/[^a-zA-Z]/' ;
+    private const PATTERN = '/[^a-zA-Z]/';
 
     public function getFilter(string $value): string
     {
-        return preg_replace($this->search, '', $value) ?? '';
+        return preg_replace(self::PATTERN, '', $value) ?? '';
     }
-
 }
 
