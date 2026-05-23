@@ -8,12 +8,11 @@ use Rubricate\Filter\IGetFilter;
 
 class AlnumUnderscoreHyphenPreserveFilter implements IGetFilter
 {
-    private string $search = '/[^a-zA-Z\]0-9\]_-]/' ;
+    private const PATTERN = '/[^a-zA-Z0-9_-]/';
 
     public function getFilter(string $value): string
     {
-        return preg_replace($this->search, '', $value) ?? '';
+        return preg_replace(self::PATTERN, '', $value) ?? '';
     }
-
 }
 
