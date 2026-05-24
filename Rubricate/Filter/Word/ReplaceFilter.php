@@ -6,7 +6,7 @@ namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
 
-class SeparatorToSeparatorWordFilter extends AbstractSeparatorWordFilter implements IGetFilter
+class ReplaceFilter extends AbstractSeparatorWordFilter implements IGetFilter
 {
     public function __construct(
         string $searchSeparator = ' ',
