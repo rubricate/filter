@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rubricate\Filter\Word;
 
-abstract class AbstractSeparatorWordFilter implements IGetSeparatorWordFilter
+abstract class AbstractSeparatorWordFilter implements IGetSeparatorFilter
 {
     public function __construct(
         private readonly string $separator = ' '
