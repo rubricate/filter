@@ -1,5 +1,5 @@
 *.vim
-*.lab.*
+*.dev.*
 tags
-note.txt
+*.dev/
 vendor/
