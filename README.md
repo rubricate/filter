@@ -23,4 +23,4 @@ $ composer require rubricate/filter
 
 ### License
 
-The MIT License (MIT). Please see [License File](https://github.com/rubricate/filter/blob/main/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/rubricate/filter?tab=MIT-1-ov-file) for more information.
