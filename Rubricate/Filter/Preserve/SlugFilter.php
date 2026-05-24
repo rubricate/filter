@@ -6,7 +6,7 @@ namespace Rubricate\Filter\Preserve;
 
 use Rubricate\Filter\IGetFilter;
 
-class AlnumUnderscoreHyphenPreserveFilter implements IGetFilter
+class SlugFilter implements IGetFilter
 {
     private const PATTERN = '/[^a-zA-Z0-9_-]/';
 
