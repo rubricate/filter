@@ -6,7 +6,7 @@ namespace Rubricate\Filter\Word;
 
 use Rubricate\Filter\IGetFilter;
 
-class CamelCaseToSeparatorWordFilter extends AbstractSeparatorWordFilter implements IGetFilter
+class FromCamelCaseFilter extends AbstractSeparatorWordFilter implements IGetFilter
 {
     public function getFilter(string $value): string
     {
