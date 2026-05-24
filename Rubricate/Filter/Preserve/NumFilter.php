@@ -6,7 +6,7 @@ namespace Rubricate\Filter\Preserve;
 
 use Rubricate\Filter\IGetFilter;
 
-class NumPreserveFilter implements IGetFilter
+class NumFilter implements IGetFilter
 {
     private const PATTERN = '/[^0-9]/';
 
