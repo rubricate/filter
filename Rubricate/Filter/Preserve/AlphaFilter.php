@@ -6,7 +6,7 @@ namespace Rubricate\Filter\Preserve;
 
 use Rubricate\Filter\IGetFilter;
 
-class AlphaPreserveFilter implements IGetFilter
+class AlphaFilter implements IGetFilter
 {
     private const PATTERN = '/[^a-zA-Z]/';
 
