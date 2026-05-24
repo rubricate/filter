@@ -1,5 +1,7 @@
 {
     "name": "rubricate/filter",
+    "description": "A flexible, lightweight, and object-oriented string filtering and sanitization library.",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -8,11 +10,35 @@
         }
     ],
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10.0"
+    },
+    "keywords": [
+        "filter",
+        "sanitize",
+        "slug",
+        "camelcase",
+        "validation",
+        "rubricate"
+    ],
+    "support": {
+        "docs": "https://rubricate.github.io/components/filter",
+        "issues": "https://github.com/rubricate/filter/issues",
+        "source": "https://github.com/rubricate/filter"
     },
     "autoload": {
         "psr-4": {
             "Rubricate\\Filter\\": "Rubricate/Filter/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.2"
+        },
+        "sort-packages": true
     }
 }
